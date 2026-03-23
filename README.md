@@ -38,39 +38,39 @@ All values that must be customized for your environment are listed below. Search
 
 ### `databricks.yml`
 
-| Variable | Current Value | Description |
-|----------|--------------|-------------|
-| `workspace.host` | `https://fevm-agentbricks.cloud.databricks.com` | Your Databricks workspace URL |
+| Variable | Value | Description |
+|----------|-------|-------------|
+| `workspace.host` | `<YOUR_WORKSPACE_URL>` | Your Databricks workspace URL |
 
 ### `app/app.yaml`
 
-| Variable | Current Value | Description |
-|----------|--------------|-------------|
-| `SUPERVISOR_ENDPOINT` | `mas-8a39578f-endpoint` | Name of the MAS serving endpoint (see [Create the MAS Endpoint](#step-1-create-the-mas-endpoint)) |
-| `WAREHOUSE_ID` | `77819a974fbc3b34` | SQL Warehouse ID used by the agent for `parse_document` |
-| `VOLUME_PATH` | `/Volumes/agentbricks_catalog/document_ai_demo/uploads` | UC Volume path for uploaded documents |
-| `LAKEBASE_HOST` | `ep-solitary-block-d2xzagi3.database.us-east-1.cloud.databricks.com` | Lakebase endpoint hostname (output of setup notebook) |
-| `LAKEBASE_ENDPOINT` | `projects/document-chat-db/branches/production/endpoints/primary` | Lakebase endpoint full name |
-| `serving_endpoint` (resources) | `mas-8a39578f-endpoint` | Must match `SUPERVISOR_ENDPOINT` |
-| `sql_warehouse` (resources) | `77819a974fbc3b34` | Must match `WAREHOUSE_ID` |
+| Variable | Value | Description |
+|----------|-------|-------------|
+| `SUPERVISOR_ENDPOINT` | `<YOUR_MAS_ENDPOINT>` | Name of the MAS serving endpoint (see [Create the MAS Endpoint](#step-1-create-the-mas-endpoint)) |
+| `WAREHOUSE_ID` | `<YOUR_WAREHOUSE_ID>` | SQL Warehouse ID used by the agent for `parse_document` |
+| `VOLUME_PATH` | `/Volumes/<CATALOG>/<SCHEMA>/uploads` | UC Volume path for uploaded documents |
+| `LAKEBASE_HOST` | `<YOUR_LAKEBASE_HOST>` | Lakebase endpoint hostname (output of setup notebook) |
+| `LAKEBASE_ENDPOINT` | `projects/<LAKEBASE_PROJECT>/branches/production/endpoints/primary` | Lakebase endpoint full name |
+| `serving_endpoint` (resources) | `<YOUR_MAS_ENDPOINT>` | Must match `SUPERVISOR_ENDPOINT` |
+| `sql_warehouse` (resources) | `<YOUR_WAREHOUSE_ID>` | Must match `WAREHOUSE_ID` |
 
 ### `notebooks/setup_all_resources.py`
 
-| Variable | Current Value | Description |
-|----------|--------------|-------------|
-| `APP_NAME` | `document-chat` | Databricks App name (must match `databricks.yml`) |
-| `CATALOG` | `agentbricks_catalog` | Unity Catalog name |
-| `SCHEMA` | `document_ai_demo` | Schema within the catalog |
-| `VOLUME` | `uploads` | Volume name for document storage |
-| `LAKEBASE_PROJECT` | `document-chat-db` | Lakebase project name |
-| `SERVING_ENDPOINT` | `mas-8a39578f-endpoint` | Must match `app.yaml` |
-| `WAREHOUSE_ID` | `77819a974fbc3b34` | Must match `app.yaml` |
+| Variable | Value | Description |
+|----------|-------|-------------|
+| `APP_NAME` | `<YOUR_APP_NAME>` | Databricks App name (must match `databricks.yml`) |
+| `CATALOG` | `<YOUR_CATALOG>` | Unity Catalog name |
+| `SCHEMA` | `<YOUR_SCHEMA>` | Schema within the catalog |
+| `VOLUME` | `<YOUR_VOLUME>` | Volume name for document storage |
+| `LAKEBASE_PROJECT` | `<YOUR_LAKEBASE_PROJECT>` | Lakebase project name |
+| `SERVING_ENDPOINT` | `<YOUR_MAS_ENDPOINT>` | Must match `app.yaml` |
+| `WAREHOUSE_ID` | `<YOUR_WAREHOUSE_ID>` | Must match `app.yaml` |
 
 ### `frontend/src/App.jsx` (line 372)
 
-| Variable | Current Value | Description |
-|----------|--------------|-------------|
-| Endpoint badge text | `mas-8a39578f-endpoint` | Cosmetic — displayed in the chat header UI |
+| Variable | Value | Description |
+|----------|-------|-------------|
+| Endpoint badge text | `<YOUR_MAS_ENDPOINT>` | Cosmetic — displayed in the chat header UI |
 
 ---
 
