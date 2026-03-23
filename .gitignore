@@ -11,6 +11,9 @@ node_modules/
 *.mov
 *.mp4
 
+# Build output
+app/static/
+
 # Python
 __pycache__/
 *.pyc
