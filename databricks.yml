@@ -1,0 +1,24 @@
+bundle:
+  name: document-chat
+
+workspace:
+  host: https://fevm-agentbricks.cloud.databricks.com
+
+targets:
+  dev:
+    default: true
+
+resources:
+  apps:
+    document_chat:
+      name: document-chat
+      description: "Document Chat App with AI Parse and Supervisor Agent"
+      source_code_path: ./app
+
+  jobs:
+    setup_all_resources:
+      name: "[${bundle.name}] Setup All Resources"
+      tasks:
+        - task_key: setup
+          notebook_task:
+            notebook_path: ./notebooks/setup_all_resources.py
